@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url(./signinbg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    font-family: 'calibri';
+    color: white;
+}
+form{
+    padding-top: 20px;
+    box-shadow: 0px 0px 50px black;
+    border-radius: 30px;
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    margin: auto;
+    margin-top: 150px;
+    backdrop-filter: blur(5px);
+}
+input{
+    height: 30px;
+    width: 200px;
+    font-size: large;
+    text-align: center;
+    border-radius: 30px;
+}
+input[name="pass"]{
+    margin-left: 28px;
+}
+i{
+    margin-left: 8px;
+}
+button{
+        padding: 5px;
+        width: 25%;
+        font-size: large;
+        border-radius: 30px;
+        text-align: center;
+        background: linear-gradient(to right,black,rgb(6, 156, 6));
+        border: none;
+        box-shadow: 5px 5px black   ;
+        color: white;
+        margin-left: 10px;
+        letter-spacing: 3px;
+        transition: all 0.3s;
+}
+/* #btn:hover{
+        transform: scale(1.2);
+} */
+button:active{
+    transform: translate(5px,5px);
+    box-shadow: 0px 0px black;
+    
+}

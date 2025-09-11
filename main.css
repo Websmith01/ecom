@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+}
+body{
+    background: linear-gradient(to top, darkgreen,black);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100vh; 
+    
+}   
+.navbar{
+    width: 100%;
+    /* height: 60px; */
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 0.5px solid white ;
+    backdrop-filter: blur(5px) brightness(70%);
+    background-color: transparent;
+}
+.navlink{
+  display: flex;
+  align-items: center;
+  letter-spacing: 2px;
+  justify-content: space-between;
+  width: 350px;
+    color: white;
+
+}
+.navlink div{
+    margin-right: 50px;
+}
+.logo{
+    font-size: x-large;
+    letter-spacing: 3px;
+    color: white;
+}
