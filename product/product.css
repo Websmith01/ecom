@@ -16,7 +16,7 @@
     background: #C6D870;
 }
 #grocery{
-    background-color: rgb(255, 204, 0);
+    /* background-color: rgb(255, 204, 0); */
     text-align: center;
     font-size: 20px;
     font-weight: bold;
@@ -29,7 +29,7 @@
     border: 2px solid;
 }
 #electronics{
-  background-color: mediumseagreen;
+  /* background-color: mediumseagreen; */
   text-align: center;
   font-size: 20px;
   font-weight: bold;
@@ -42,7 +42,7 @@
 
 }
 #clothing{
-  background-color: peachpuff;
+  /* background-color: peachpuff; */
   text-align: center;
   font-size: 20px;
   font-weight: bold;

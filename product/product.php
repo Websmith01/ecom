@@ -32,7 +32,7 @@ $con = new PDO($link,$username,$password);
             foreach($data as $d){
                 ?>
                 <div class="grid grid-cols-2 border-2 border-black m-3">
-                    <img class="catimg ml-8" src="<?php echo $d['imglink'];?>" alt="">
+                    <img class="catimg ml-4" src="<?php echo $d['imglink'];?>" alt="">
                     <div class="flex items-center flex-col justify-center">
                         <h2><?php echo $d['pname'];?></h2>
                         <h3>Rs. <?php echo $d['pprice'];?></h3>
@@ -65,9 +65,28 @@ $con = new PDO($link,$username,$password);
             $data= $datasql->fetchAll();
             foreach($data as $d){
                 ?>
-                <div>
-                    <h2><?php echo $d['pname'];?></h2>
-                    <h3>Rs. <?php echo $d['pprice'];?></h3>
+                <div class="grid grid-cols-2 border-2 border-black m-3">
+                    <img class="catimg ml-4" src="<?php echo $d['imglink'];?>" alt="">
+                    <div class="flex items-center flex-col justify-center">
+                        <h2><?php echo $d['pname'];?></h2>
+                        <h3>Rs. <?php echo $d['pprice'];?></h3>
+                        <div class="flex items-center text-[15px]">
+                            <select class="border-2 border-black">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                            </select>
+                            <button class="border-2 text-[15px] ml-2">ADD TO CART</button>
+                        </div>
+
+                    </div>
                 </div>
                 <?php }?>
             </div>
@@ -80,9 +99,28 @@ $con = new PDO($link,$username,$password);
             $data= $datasql->fetchAll();
             foreach($data as $d){
                 ?>
-                <div>
-                    <h2><?php echo $d['pname'];?></h2>
-                    <h3>Rs. <?php echo $d['pprice'];?></h3>
+                 <div class="grid grid-cols-2 border-2 border-black m-3">
+                    <img class="catimg ml-4" src="<?php echo $d['imglink'];?>" alt="">
+                    <div class="flex items-center flex-col justify-center">
+                        <h2><?php echo $d['pname'];?></h2>
+                        <h3>Rs. <?php echo $d['pprice'];?></h3>
+                        <div class="flex items-center text-[15px]">
+                            <select class="border-2 border-black">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                            </select>
+                            <button class="border-2 text-[15px] ml-2">ADD TO CART</button>
+                        </div>
+
+                    </div>
                 </div>
                 <?php }?>
             </div>
