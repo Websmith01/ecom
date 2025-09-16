@@ -12,7 +12,9 @@ if(isset($_COOKIE['adminname'])){
 }
 $updemail = $con->prepare("UPDATE admin SET token='' WHERE name = ?");
 $updemail->execute([$an]);
-setcookie("adminuser", "");
-header("Location: ./main.php");
+setcookie("adminuser", "", time() - 3600, "/");
+unset($_COOKIE["adminname"]);
+unset($_COOKIE["adminuser"]);
+header("Location: ../main.php");
 exit();
 ?>

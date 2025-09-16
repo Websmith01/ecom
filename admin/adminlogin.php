@@ -18,6 +18,7 @@ $con = new PDO($link,$username,$password);
         if ($co==$data[0]['password']){
             setcookie("adminuser", $atoken, time() + (24 * 60 * 60), "/");
             setcookie("adminname", $data[0]['name'], time() + (24 * 60 * 60), "/");
+             $msg = '<center><h2 style="color:lightgreen;" id="success">login success</h2></center>';
 
             $setrandm = $con->prepare("UPDATE admin SET token = ? WHERE password = ?");
             $setrandm->execute([$atoken,$co]);
@@ -39,6 +40,7 @@ $con = new PDO($link,$username,$password);
     <?php
         if(isset($_COOKIE['adminuser'])){
             echo '<h1> admin already logged in</h1>';
+            
         }else{
     ?>           
     <fieldset style=" width:fit-content; margin:auto; margin-top:200px;">
@@ -49,6 +51,12 @@ $con = new PDO($link,$username,$password);
         </form>
     </fieldset>
     <?php } ?>
-
+    <a href="./mainadmin.php"> go to adminpanel</a>
+    <script>
+        let success = document.getElementById('success');
+        if (success) {
+            setTimeout(() => { success.innerText = '';window.location.href = './admin/mainadmin.php' }, 1000);
+        }
+    </script>
 </body>
 </html>
