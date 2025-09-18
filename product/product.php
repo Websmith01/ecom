@@ -6,7 +6,30 @@ $database = 'ecom';
 
 $link = "mysql:host=$server;dbname=$database";
 $con = new PDO($link,$username,$password);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
+    $pid = $_POST['pid'];
+    $pq = $_POST['qty']; 
+    $newcart= $_COOKIE['cartuser'] . '-' . 'pid:'.$pid.',orderqty:'.$pq;
+    // echo $newcart;
+    setcookie('cartuser', $newcart, time() + (10 * 365 * 24 * 60 * 60), "/");
+}
 ?>
+<?php 
+    $emsql =$con->prepare("SELECT token FROM customer");
+    $emsql->execute();
+    $user = $emsql->fetchAll();
+    $pr = false;
+    if(isset($_COOKIE['herouser'])){
+        foreach($user as $u){
+            // print_r($u);
+            if(password_verify($u['token'], $_COOKIE['herouser'])){
+                $pr = true;
+                break;
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +38,21 @@ $con = new PDO($link,$username,$password);
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Document</title>
     <link rel="stylesheet" href="./product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1 class="pheader">ALL PRODUCT CATEGORIES</h1>
+    
+    <div class="pheader">
+        <h1 class="ph1">ALL PRODUCT CATEGORIES </h1>  
+        <?php 
+        if($pr == true){
+        ?>
+        <a href="../cart/cart.php"><button> <i class="fa-solid fa-cart-shopping cart"></i></button></a>
+        <?php } ?>
+    </div>
+    
     <div class="phead">
         <button class="catbtn">GROCERY</button>
         <button class="catbtn">CLOTHING</button>
@@ -36,27 +71,33 @@ $con = new PDO($link,$username,$password);
                     <div class="flex items-center flex-col justify-center">
                         <h2><?php echo $d['pname'];?></h2>
                         <h3>Rs. <?php echo $d['pprice'];?></h3>
-                        <div class="flex items-center text-[15px]">
-                            <select class="border-2 border-black">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
-                                <option value="">7</option>
-                                <option value="">8</option>
-                                <option value="">9</option>
-                                <option value="">10</option>
-                            </select>
-                            <button class="border-2 text-[15px] ml-2">ADD TO CART</button>
-                        </div>
+                        <form action="./product.php" method="post">
+                            <div class="flex items-center text-[15px]">
+                                <input type="text" name="pid" value="<?php echo $d['pid'];?>" hidden>
+                                <select class="border-2 border-black" name="qty">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <button class="border-2 text-[15px] ml-2" type="submit">ADD TO CART</button>
+                            </div>
+                        </form>
 
                     </div>
                 </div>
                 <?php }?>
             </div>
         </div>
+       
+
+
         <div id="clothing">
             <div class="grid grid-cols-3">
                 <?php 
