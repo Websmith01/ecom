@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $msg = '<center><a href="./signup.php"><h2 style="color:orange;">please sign up first </h2></a></center>';
         } else {
             $hp = $data[0]['password'];
+           
             if (password_verify($ps, $hp)) {
                 // ✅ Set cookie before any echo
                 $token = rand(111111111,999999999);
@@ -30,6 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $setrandm->execute([$token,$em]);
                 setcookie("herouser", $tkh, time() + (10 * 365 * 24 * 60 * 60), "/");
                 setcookie("heroemail", $em, time() + (10 * 365 * 24 * 60 * 60), "/");
+                setcookie('cartuser', $em.'=', time() + (10 * 365 * 24 * 60 * 60), "/");
+
                 $msg = '<center><h2 style="color:lightgreen;" id="success">signin success</h2></center>';
             } else {
                 $msg = '<center><h2 style="color:red;">incorrect credential</h2></center>';
