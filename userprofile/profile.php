@@ -13,9 +13,10 @@ $con = new PDO($link,$username,$password);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./profile.css">
 </head>
 <body>
-    <a href="../main.php">home page</a>
+    <a href="../main.php"> <button class="hbtn">Home Page</button></a>
     <?php
         $emsql =$con->prepare("SELECT token FROM customer");
         $emsql->execute();
@@ -40,22 +41,21 @@ $con = new PDO($link,$username,$password);
         if($pr == true){
 
     ?>
-    <h1>EDIT PROFILE</h1>
-    <fieldset>
     <form action="profile.php" method="post">
         <?php 
             $em = $_COOKIE['heroemail'];
             $emsql =$con->prepare("SELECT user,adr,phno FROM customer WHERE email = ?");
             $emsql->execute([$em]);
             $user = $emsql->fetchAll();
-        ?>
+            ?>
 
+        <h1>EDIT PROFILE</h1>
         <input type="email" value="<?php echo $em; ?>" disabled><br>
         <input type="text" value="<?php echo $user[0]['user']; ?>" name="username" required placeholder="Username"><br>
         <input type="text" value="<?php echo $user[0]['adr']; ?>" name="address" required placeholder="Address"><br>
         <input type="text" value="<?php echo $user[0]['phno']; ?>" name="phone" required placeholder="Mobile Number"><br>
-        <button type="submit">save</button>
-    </form></fieldset>
+        <button type="submit">Save</button>
+    </form>
     <?php } ?>
     <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -64,7 +64,7 @@ $con = new PDO($link,$username,$password);
             $phno = $_POST['phone'];
             $updsql =$con->prepare("UPDATE customer SET user = ?,adr=?, phno = ? WHERE email=? ");
             $updsql->execute([$un,$adr,$phno,$em]);
-            echo 'UPDATED SUCCESSFULLY';
+            echo '<center><h2 style="color: #19183b; " id="success">UPDATE SUCCESS</h2> </center>';
         }
     ?>
 </body>

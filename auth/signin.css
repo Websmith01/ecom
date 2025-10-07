@@ -3,11 +3,10 @@
     padding: 0;
 }
 body{
-    background: url(./signinbg.jpg);
+    background: url(./signbg.png);
     background-repeat: no-repeat;
     background-size: 100% 100vh;
     font-family: 'calibri';
-    color: white;
 }
 form{
     padding-top: 20px;
@@ -17,8 +16,14 @@ form{
     height: 300px;
     text-align: center;
     margin: auto;
-    margin-top: 150px;
-    backdrop-filter: blur(5px);
+    margin-top: 130px;
+    backdrop-filter: blur(2px);
+}
+form h1{
+     font-size: 35px;
+    letter-spacing: 2px;
+    color: #19183B;
+
 }
 input{
     height: 30px;
@@ -33,19 +38,28 @@ input[name="pass"]{
 i{
     margin-left: 8px;
 }
+.sbtn{
+    position: relative;
+    width:120px ;
+    height: 60px;
+    left: 1350px;
+    top: 30px;
+}
 button{
         padding: 5px;
-        width: 25%;
-        font-size: large;
-        border-radius: 30px;
-        text-align: center;
-        background: linear-gradient(to right,black,rgb(6, 156, 6));
-        border: none;
-        box-shadow: 5px 5px black   ;
-        color: white;
-        margin-left: 10px;
-        letter-spacing: 3px;
-        transition: all 0.3s;
+    width: 25%;
+    font-size: large;
+    border-radius: 10px;
+    text-align: center;
+    background:  #A1C2BD;
+    margin: 5px;
+    border: none;
+    box-shadow: 5px 5px black   ;
+    color: #19183B;
+    font-weight: bold;
+    /* margin-left: 10px; */
+    letter-spacing: 3px;
+    transition: all 0.3s;
 }
 /* #btn:hover{
         transform: scale(1.2);

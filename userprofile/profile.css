@@ -3,11 +3,26 @@
     padding: 0;
 }
 body{
-    background: url(./signbg.png);
+    background:linear-gradient(120deg,#19183B,#19183B, #708993,#A1C2BD,#19183B,#19183B);
     background-repeat: no-repeat;
     background-size: 100% 100vh;
     font-family: 'calibri';
     color: white;
+}
+.hbtn{
+     padding: 5px;
+    width: 10%;
+    font-size: x-large;
+    border-radius: 10px;
+    text-align: center;
+    background:  #A1C2BD;
+    color: #19183B;
+    margin: 10px;
+    border: none;
+    /* box-shadow: 5px 5px black   ; */
+    /* color: white; */
+    /* margin-left: 10px; */
+    /* letter-spacing: 3px; */
 }
 form{
     padding-top: 20px;
@@ -17,14 +32,16 @@ form{
     height: 400px;
     text-align: center;
     margin: auto;
-    margin-top: 110px;
+    margin-top: 100px;
     backdrop-filter: blur(5px);
 }
-form h1{
+ h1{
     margin: 20px;
     color: #19183B;
-    font-size: 35px;
-    letter-spacing: 2px;
+    font-size: 40px;
+    letter-spacing: 3px;
+    
+
 }
 input{
     height: 30px;
@@ -32,40 +49,24 @@ input{
     font-size: large;
     text-align: center;
     border-radius: 30px;
+    margin: 7px;
 }
-input[name="pass"]{
-    margin-left: 28px;
-}
-i{
-    margin-left: 8px;
-}
-.sbtn{
-    position: relative;
-    width:120px ;
-    height: 60px;
-    left: 1350px;
-    top: 30px;
-}
-button{
-        padding: 5px;
+form button{
+    padding: 5px;
     width: 25%;
     font-size: large;
-    border-radius: 10px;
+    border-radius: 30px;
     text-align: center;
-    background:  #A1C2BD;
-    margin: 5px;
+    background:  #19183B;
+    margin: 25px;
     border: none;
     box-shadow: 5px 5px black   ;
-    color: #19183B;
-    font-weight: bold;
+    color: white;
     /* margin-left: 10px; */
     letter-spacing: 3px;
     transition: all 0.3s;
 }
-/* #btn:hover{
-        transform: scale(1.2);
-} */
-button:active{
+form button:active{
     transform: translate(5px,5px);
     box-shadow: 0px 0px black;
     

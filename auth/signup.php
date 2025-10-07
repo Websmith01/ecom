@@ -9,6 +9,7 @@
          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+         <a href="./signin.php"><button class="sbtn">Sign In</button></a>
     <?php
         $server = 'localhost';
         $username = 'root';
@@ -32,7 +33,7 @@
             <button type="submit" value="signup">Sign Up</button> <br><br> 
             <button type="reset">Reset</button>
         </form>
-        <a href="./signin.php"><button>Sign In</button></a>
+   
   
     <?php
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -45,7 +46,7 @@
             $insertstmt = $con->prepare("INSERT INTO customer VALUES (?,?,?,?,?,?)");
             try{
                 $insertstmt->execute([$em,$un,$hps,'','','']);
-                echo '<center><h2 style="color:lightgreen;" id="success">signup success</h2></center>';
+                echo '<center><h1 style="color: #A1C2BD; " id="success">SIGNUP SUCCESS</h1></center>';
             }catch (PDOException $e) {
                 echo 'Error occurred: ' . $e->getMessage();
             }

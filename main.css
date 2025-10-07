@@ -2,7 +2,8 @@
     margin: 0px;
 }
 body{
-    background: linear-gradient(to top, darkgreen,black);
+    /* background: linear-gradient(to bottom, #1f2937,#0d9488); */
+    background: url(./mainbg1.png);
     background-position: fixed;
     background-repeat: no-repeat;
     background-size: 100% 100vh; 

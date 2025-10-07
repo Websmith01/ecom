@@ -18,7 +18,7 @@ $con = new PDO($link,$username,$password);
         if ($co==$data[0]['password']){
             setcookie("adminuser", $atoken, time() + (24 * 60 * 60), "/");
             setcookie("adminname", $data[0]['name'], time() + (24 * 60 * 60), "/");
-             $msg = '<center><h2 style="color:lightgreen;" id="success">login success</h2></center>';
+             $msg = '<center><h2 style="color:#19183B;" id="success">login success</h2></center>';
 
             $setrandm = $con->prepare("UPDATE admin SET token = ? WHERE password = ?");
             $setrandm->execute([$atoken,$co]);

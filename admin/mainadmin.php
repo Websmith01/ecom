@@ -53,7 +53,7 @@ $con = new PDO($link,$username,$password);
         }
         if($auth){
     ?>
-        <a href="./adminlogout.php" ><button class="logbut">logout admin </button></a>
+        <a href="./adminlogout.php" ><button class="logbut">LOGOUT ADMIN </button></a>
         <h4>Authenticated success</h4>
         <div class="maindiv">
             <div class="editproduct">

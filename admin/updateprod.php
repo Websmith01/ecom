@@ -17,8 +17,7 @@ $con = new PDO($link,$username,$password);
         $insertstmt = $con->prepare("UPDATE product SET pname = ?, pprice = ?, pqty = ?, imglink = ? where pid =?");
         try{
             $insertstmt->execute([$pn,$pp,$pq,$pim,$id]);
-            echo 'updated successfully';
-            echo '<a href="./mainadmin.php"> go back to main admin</a>';
+            echo '<center><h2 style="color: #19183b;">Updated Successfully</h2></center>';
         }catch (PDOException $e) {
             echo 'Error occurred: ' . $e->getMessage();
         }
@@ -31,8 +30,10 @@ $con = new PDO($link,$username,$password);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./updateprod.css">
 </head>
 <body>
+    <a href="../admin/mainadmin.php"><button>Back</button></a>
      <?php
         $auth = false;
         if(!isset($_COOKIE['adminuser'])){
@@ -59,13 +60,14 @@ $con = new PDO($link,$username,$password);
 ?>
 
     <form action="<?php echo './updateprod.php?id=' . $id; ?>" method="post">
+        <h1>UPDATE PRODUCT</h1>
         <input type="text" value="<?php echo $prod[0]['pid'];  ?>" disabled> <br>
         <input type="text" value="<?php echo $prod[0]['pcategory'];  ?>" disabled> <br>
         <input type="text" name="pname" value="<?php echo $prod[0]['pname'];  ?>" > <br>
         <input type="text" name="pprice" value="<?php echo $prod[0]['pprice']; ?>"> <br>
         <input type="text" name="pqty" value="<?php echo $prod[0]['pqty']; ?>"> <br>
-        <input type="text" name="imglink" value="<?php echo $prod[0]['imglink']; ?>"> <br>
-        <button type="submit">UPDATE PRODUCT</button>
+        <input type="text" placeholder="IMGLINK" name="imglink" value="<?php echo $prod[0]['imglink']; ?>"> <br>
+        <button type="submit">UPDATE</button>
     </form>
 <?php } else{
     echo 'some error occured';

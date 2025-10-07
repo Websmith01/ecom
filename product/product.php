@@ -45,6 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     
     <div class="pheader">
+        <a href="../main.php"><button><i class="fa-regular fa-house home"></i></button></a>
+
         <h1 class="ph1">ALL PRODUCT CATEGORIES </h1>  
         <?php 
         if($pr == true){

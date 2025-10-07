@@ -22,14 +22,25 @@ $con = new PDO($link,$username,$password);
                 }
             }
     ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./deleteprod.css">
+    </head>
+    <body>
+    <a href="../admin/mainadmin.php"><button>Back</button></a>
+      
 
 <?php
     }
     if($auth){
         $id = $_GET['id']; 
 ?>
-    <h1>are you sure want to delete</h1>
     <form action="<?php echo './deleteprod.php?id=' . $id; ?>" method="post">
+        <h1>Are you sure want to Delete ?</h1>
 
         <button type="submit" name="conf" value="yes">Yes</button>
         <button type="submit" name="conf" value="no">No</button>
@@ -41,10 +52,9 @@ $con = new PDO($link,$username,$password);
             if ($conf=='yes'){
                 $deletesql =$con->prepare("DELETE FROM product WHERE pid =?");
                 $deletesql->execute([$id]);
-                echo 'deleted successfully';
-                echo '<a href="./mainadmin.php"> go back </a>';
+                echo '<h3 >Deleted Successfully</h3>';
             }else {
-                 echo '<a href="./mainadmin.php"> go back </a>';
+                // echo '<a href="./mainadmin.php"><button class="dbtn"> go back </button></a>';
             }
         }
     ?>
@@ -52,4 +62,6 @@ $con = new PDO($link,$username,$password);
 <?php }
 else{
     echo 'some error occured';
-}?>
+}?>  
+    </body>
+    </html>

@@ -1,7 +1,16 @@
+body{
+    background:linear-gradient(120deg,#19183B,#19183B, #708993,#A1C2BD,#19183B,#19183B);
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    font-family: 'calibri';
+    color: white;
+}
 .editproduct{
     display: grid;
+    border: 5px solid #A1C2BD;
+    border-radius: 10px;
     grid-template-columns: 65% auto;
-    background: rgb(2, 136, 136) ;
+    background:   #19183B ;
     width: 100%;
     height: 80vh;
     gap: 20px;
@@ -18,7 +27,7 @@
 }
 #prodhis h1{
     position: sticky;
-    background-color: rgb(2, 136, 136) ;
+    background-color: #19183B ;
     top: 0;
     color: antiquewhite;
     z-index: 1;
@@ -27,6 +36,7 @@
 .addproduct{
     text-align: center;
     color: antiquewhite;
+    background:#708993;
 
 }
 form{
@@ -50,9 +60,9 @@ button{
         font-size: medium;
         border-radius: 30px;
         text-align: center;
-        color: black;
-        background: linear-gradient(to right,white,cyan);
-        border: 1px solid;
+        color: white;
+        background: #19183B;
+        border: none;
         box-shadow: 5px 5px black   ;
         margin-left: 30px;
         transition: all 0.3s;
@@ -63,13 +73,14 @@ button:active{
 }
 .logbut{
         margin-top: 0;
+        width: 120px;
         padding: 10px;
         font-size: medium;
-        border-radius: 30px;
+        border-radius: 10px;
         text-align: center;
-        color: black;
-        background: linear-gradient(to right,white,cyan);
-        border: 1px solid;
+         color: white;
+        background: #19183B;
+        border: none;
         box-shadow: 5px 5px black   ;
         transition: all 0.3s;
 }
@@ -79,13 +90,14 @@ button:active{
 }
 .tab-but{
         margin-top: 0;
+        margin: 5px;
         padding: 6px;
         font-size: smaller;
         border-radius: 5px;
         text-align: center;
-        color: black;
-        background: linear-gradient(to right,rgb(197, 192, 192),rgb(7, 185, 185));
-        border: 1px solid;
+         color: white;
+        background: #708993;
+        border: none;
         box-shadow: none;
         transition: all 0.3s;
     }

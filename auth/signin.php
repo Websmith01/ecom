@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 setcookie("heroemail", $em, time() + (10 * 365 * 24 * 60 * 60), "/");
                 setcookie('cartuser', $em.'=', time() + (10 * 365 * 24 * 60 * 60), "/");
 
-                $msg = '<center><h2 style="color:lightgreen;" id="success">signin success</h2></center>';
+                $msg = '<center><h1 style="color: #19183b; " id="success">SIGNIN SUCCESS</h1></center>';
             } else {
                 $msg = '<center><h2 style="color:red;">incorrect credential</h2></center>';
             }
@@ -54,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <a href="./signup.php"><button type="button" class="sbtn">Sign Up</button></a>
     <form action="./signin.php" method="post">
             <h1>SIGN IN</h1><br><br>
             <input type="email" name="email" placeholder="Enter your Email" id="email" required> <br> <br>
@@ -61,7 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <i class="fa-regular fa-eye-slash" id="eye"></i> <br> <br>
             <button type="submit" >Sign In</button> <br><br>
             <button type="reset">Reset</button> 
-            <a href="./signup.php"><button type="button">Sign Up</button></a>
         </form>
     
 

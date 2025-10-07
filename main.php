@@ -27,13 +27,13 @@ $con = new PDO($link,$username,$password);
                 <a href="./product/product.php"><div >PRODUCT</div></a>
                 <?php
                     $profile='
-                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class=" text-white  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button"> PROFILE <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class=" text-white  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center " type="button"> PROFILE <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                         </svg>
                         </button>
 
                         <!-- Dropdown menu -->
-                        <div id="dropdown" class="z-10 hidden bg-[#B6FFA1] divide-y divide-[#54C392] rounded-lg shadow-sm w-44 dark:bg-[#54C392]">
+                        <div id="dropdown" class="z-10 hidden bg-[#708993] divide-y divide-[#708993] rounded-lg shadow-sm w-44 dark:bg-[#708993]">
                             <ul class="py-2 text-sm text-[#253900] dark:text-white" aria-labelledby="dropdownDefaultButton">
                             <li>
                                 <a href="" class="block px-4 py-2 hover:bg-[#FFFADC] dark:hover:bg-gray-600 dark:hover:text-white">CART</a>
@@ -62,13 +62,13 @@ $con = new PDO($link,$username,$password);
                             }
                         }
                         if($pr==false){
-                            echo '<a href="./signup.php" class="ml-[50px]">SIGN UP</a>';
-                            echo '<a href="./signin.php" class="ml-[50px]">SIGN IN</a>';
+                            echo '<a href="./auth/signup.php" class="ml-[50px]">SIGN UP</a>';
+                            echo '<a href="./auth/signin.php" class="ml-[50px]">SIGN IN</a>';
 
                         }
                     }else{
-                        echo '<a href="./signup.php" class="ml-[50px]">SIGN UP</a>';
-                        echo '<a href="./signin.php" class="ml-[50px]">SIGN IN</a>';
+                        echo '<a href="./auth/signup.php" class="ml-[50px]">SIGN UP</a>';
+                        echo '<a href="./auth/signin.php" class="ml-[50px]">SIGN IN</a>';
                     }
                 ?>
             </div>
