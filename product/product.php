@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $pid = $_POST['pid'];
     $pq = $_POST['qty']; 
     $newcart= $_COOKIE['cartuser'] . '-' . 'pid:'.$pid.',orderqty:'.$pq;
-    // echo $newcart;
     setcookie('cartuser', $newcart, time() + (10 * 365 * 24 * 60 * 60), "/");
 }
 ?>
@@ -113,22 +112,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="flex items-center flex-col justify-center">
                         <h2><?php echo $d['pname'];?></h2>
                         <h3>Rs. <?php echo $d['pprice'];?></h3>
-                        <div class="flex items-center text-[15px]">
-                            <select class="border-2 border-black">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
-                                <option value="">7</option>
-                                <option value="">8</option>
-                                <option value="">9</option>
-                                <option value="">10</option>
-                            </select>
-                            <button class="border-2 text-[15px] ml-2">ADD TO CART</button>
-                        </div>
-
+                        <form action="./product.php" method="post">
+                            <div class="flex items-center text-[15px]">
+                            <input type="text" name="pid" value="<?php echo $d['pid'];?>" hidden>
+                                <select class="border-2 border-black" name="qty">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <button class="border-2 text-[15px] ml-2" type="submit">ADD TO CART</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <?php }?>
@@ -147,22 +148,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="flex items-center flex-col justify-center">
                         <h2><?php echo $d['pname'];?></h2>
                         <h3>Rs. <?php echo $d['pprice'];?></h3>
-                        <div class="flex items-center text-[15px]">
-                            <select class="border-2 border-black">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
-                                <option value="">6</option>
-                                <option value="">7</option>
-                                <option value="">8</option>
-                                <option value="">9</option>
-                                <option value="">10</option>
-                            </select>
-                            <button class="border-2 text-[15px] ml-2">ADD TO CART</button>
-                        </div>
-
+                        <form action="./product.php" method="post">
+                            <div class="flex items-center text-[15px]">
+                            <input type="text" name="pid" value="<?php echo $d['pid'];?>" hidden>
+                                <select class="border-2 border-black" name="qty">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <button class="border-2 text-[15px] ml-2" type="submit">ADD TO CART</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <?php }?>
